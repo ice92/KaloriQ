@@ -41,7 +41,7 @@ public class HomeDetail extends AppCompatActivity implements SearchView.OnQueryT
     private RecyclerView lv;
     MakananAdapter adapter;
     TextView txtFullName;
-    private static String url = "https://www.caloriecalcmva.com/api";
+    private static String url = "https://ordsofttest.000webhostapp.com/api";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

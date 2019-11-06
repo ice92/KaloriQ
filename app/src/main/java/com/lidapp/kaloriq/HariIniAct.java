@@ -65,7 +65,7 @@ public class HariIniAct extends AppCompatActivity implements NavigationView.OnNa
     RecyclerView recycler_menu;
     RecyclerView.LayoutManager layoutManager;
     List<Aktifitas> makanans;
-    private static String url = "https://www.caloriecalcmva.com/ApiAct";
+    private static String url = "https://ordsofttest.000webhostapp.com/ApiAct";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 

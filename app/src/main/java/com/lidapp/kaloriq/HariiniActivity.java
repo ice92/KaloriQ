@@ -131,7 +131,7 @@ public class HariiniActivity extends AppCompatActivity implements NavigationView
 
         }
     List<Contact> makanans2;
-    private static String url2 = "https://www.caloriecalcmva.com/api";
+    private static String url2 = "https://ordsofttest.000webhostapp.com/api";
     /**
      * Async task class to get json by making HTTP call
      */

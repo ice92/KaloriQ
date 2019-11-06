@@ -75,8 +75,8 @@ public class BarChartActivityMultiDataset extends DemoBase implements OnSeekBarC
     private SeekBar seekBarX, seekBarY;
     private TextView tvX, tvY;
     private ProgressDialog pDialog;
-    private static String url = "https://www.caloriecalcmva.com/ApiAct";
-    private static String url2 = "https://www.caloriecalcmva.com/api";
+    private static String url = "https://ordsofttest.000webhostapp.com/ApiAct";
+    private static String url2 = "https://ordsofttest.000webhostapp.com/api";
      List<Aktifitas> makanans;
      List<Contact> makanans2;
     private ProgressDialog pDialog2;

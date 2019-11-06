@@ -42,7 +42,7 @@ public class ActDetail extends AppCompatActivity implements SearchView.OnQueryTe
     private RecyclerView lv;
     AktifitasAdapter adapter;
     TextView txtFullName;
-    private static String url = "https://www.caloriecalcmva.com/ApiAct";
+    private static String url = "https://ordsofttest.000webhostapp.com/ApiAct";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
