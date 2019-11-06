@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "936271248851",
+    "firebase_url": "https://kaloriq-8f7fe.firebaseio.com",
+    "project_id": "kaloriq-8f7fe",
+    "storage_bucket": "kaloriq-8f7fe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:936271248851:android:ccb1ec3fdc54f014",
+        "android_client_info": {
+          "package_name": "com.lidapp.kaloriq"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "936271248851-97mf7s0br7eh7htu7ot0od9gno8g0oh2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBP9-meZXWEKBCqRuhErJmJHB6ILV3Ez5g"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

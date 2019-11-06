@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_menu"
+            android:icon="@drawable/ic_action_home"
+            android:iconTint="@android:color/white"
+            android:title="Beranda" />
+        <item
+            android:id="@+id/nav_cart"
+            android:icon="@drawable/ic_wb_sunny_black_24dp"
+            android:iconTint="@android:color/white"
+            android:title="Diary Konsumsi" />
+        <item
+            android:id="@+id/nav_act"
+            android:icon="@drawable/ic_wb_sunny_black_24dp"
+            android:iconTint="@android:color/white"
+            android:title="Diary Aktivitas" />
+        <item
+            android:id="@+id/nav_gd"
+            android:icon="@drawable/ic_wb_sunny_black_24dp"
+            android:iconTint="@android:color/white"
+            android:title="Diary Gula Darah" />
+        <item
+            android:id="@+id/nav_orders"
+            android:icon="@drawable/ic_timeline_black_24dp"
+            android:iconTint="@android:color/white"
+            android:title="Timeline Kalori" />
+        <item
+            android:id="@+id/nav_orders2"
+            android:icon="@drawable/ic_timeline_black_24dp"
+            android:iconTint="@android:color/white"
+            android:title="Timeline Gula Darah" />
+        <item
+            android:id="@+id/nav_ramadhan"
+            android:icon="@drawable/ic_date_range"
+            android:iconTint="@android:color/white"
+            android:title="Mode Puasa" />
+        <item
+            android:id="@+id/nav_profil"
+            android:icon="@drawable/ic_account_box"
+            android:iconTint="@android:color/white"
+            android:title="Profil" />
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_exit_to_app_black_24dp"
+            android:iconTint="@android:color/white"
+            android:title="Keluar" />
+
+    </group>
+
+</menu>
