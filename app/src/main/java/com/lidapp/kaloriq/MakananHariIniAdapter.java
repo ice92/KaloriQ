@@ -47,7 +47,7 @@ public class MakananHariIniAdapter extends RecyclerView.Adapter<HariIniViewHolde
         return new HariIniViewHolder(view);
     }
     String waktu1[]={"Makan Pagi","Makan Siang","Makan Malam","Camilan Pagi","Camilan Siang","Camilan Malam","Lain - Lain"};
-    String waktu2[]={"Berbuka","Takjil","Sahur"};
+    String waktu2[]={"Sahur","Takjil","Berbuka"};
     @Override
     public void onBindViewHolder(HariIniViewHolder holder, final int position) {
 

@@ -70,7 +70,7 @@ public class BarChartActivityMultiDataset extends DemoBase implements OnSeekBarC
         OnChartValueSelectedListener {
     private String waktu[] ;
     String waktu1[]={"Makan Pagi","Makan Siang","Makan Malam","Camilan Pagi","Camilan Siang","Camilan Malam","Lain - Lain"};
-    String waktu2[]={"Berbuka","Takjil","Sahur"};
+    String waktu2[]={"Sahur","Takjil","Berbuka"};
     private BarChart chart;
     private SeekBar seekBarX, seekBarY;
     private TextView tvX, tvY;
