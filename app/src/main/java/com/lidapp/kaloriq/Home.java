@@ -245,34 +245,35 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         } else if (id == R.id.nav_cart) {
             Intent DetailIntent=new Intent(Home.this,HariiniActivity.class);
             startActivity(DetailIntent);
-            this.finish();
+//            this.finish();
         }  else if (id == R.id.nav_profil) {
             Intent DetailIntent=new Intent(Home.this,ProfilAct.class);
             startActivity(DetailIntent);
-            this.finish();
+//            this.finish();
         }else if (id == R.id.nav_act) {
             Intent DetailIntent=new Intent(Home.this,HariIniAct.class);
             startActivity(DetailIntent);
-            this.finish();
+//            this.finish();
         }else if (id == R.id.nav_gd) {
             Intent DetailIntent=new Intent(Home.this,HariIniGD.class);
             startActivity(DetailIntent);
-            this.finish();
+//            this.finish();
         }else if (id == R.id.nav_orders) {
         Intent DetailIntent=new Intent(Home.this, CombinedChartActivity.class);
         startActivity(DetailIntent);
-            this.finish();
+//            this.finish();
         }else if (id == R.id.nav_orders2) {
             Intent DetailIntent=new Intent(Home.this, CombinedChartActivityGD.class);
             startActivity(DetailIntent);
-            this.finish();}
+//            this.finish();
+        }
         else if (id == R.id.nav_ramadhan) {
             if(pref.getBoolean("isfast",true)) {
                 editor.putBoolean("isfast", false);
                 editor.commit();
                 item.setTitle("Mode Puasa (Non Aktif)");
                 Toast.makeText(Home.this,"Mode Puasa dinonaktifkan",Toast.LENGTH_LONG).show();
-                this.finish();
+
             }
             else{
                 editor.putBoolean("isfast", true);
@@ -280,7 +281,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
                 item.setTitle("Mode Puasa (Aktif)");
 //                item.setIcon(R.drawable.ic_action_save);
                 Toast.makeText(Home.this,"Mode Puasa diaktifkan",Toast.LENGTH_LONG).show();
-                this.finish();
+//                this.finish();
             }
         } else if (id == R.id.nav_logout) {
 

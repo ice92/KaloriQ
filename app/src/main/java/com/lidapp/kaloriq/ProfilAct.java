@@ -6,6 +6,7 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -13,6 +14,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -27,9 +29,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.lidapp.kaloriq.Common.Common;
+import com.lidapp.kaloriq.Graph.CombinedChartActivity;
 import com.lidapp.kaloriq.Model.User;
 import com.lidapp.kaloriq.Model.User2;
 import com.rengwuxian.materialedittext.MaterialEditText;
+import com.tooltip.Tooltip;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -160,6 +164,21 @@ public class ProfilAct extends AppCompatActivity implements NavigationView.OnNav
         startActivity(homeIntent);
         finish();
     }
+    public void onClickTooltip(View v){
+        showTooltip(v, Gravity.TOP);
+    }
+
+    public void showTooltip(View v, int gravity) {
+        Button btn=(Button) v;
+        new Tooltip.Builder(btn).setText("Indeks Massa Tubuh")
+                .setTextColor(Color.BLACK)
+                .setBackgroundColor(Color.WHITE)
+                .setGravity(gravity)
+                .setCornerRadius(8f)
+                .setDismissOnClick(true)
+                .show();
+    }
+
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
