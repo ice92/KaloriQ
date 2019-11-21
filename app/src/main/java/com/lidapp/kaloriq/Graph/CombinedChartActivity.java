@@ -117,7 +117,7 @@ public class CombinedChartActivity extends DemoBase {
         ArrayList<Entry> entries = new ArrayList<>();
 
         for (int index = startDate; index < startDate+count; index++)
-            entries.add(new Entry(index + 0.5f, getRandom(200, 2300)));
+            entries.add(new Entry(index + 0.5f, 2350));
 
         LineDataSet set = new LineDataSet(entries, "Kalori Ideal");
         set.setColor(Color.rgb(0, 240, 0));

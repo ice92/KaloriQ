@@ -77,7 +77,7 @@ public class CombinedChartActivityGD extends DemoBase {
         YAxis leftAxis = chart.getAxisLeft();
         leftAxis.setDrawGridLines(false);
         leftAxis.setAxisMinimum(0f); // this replaces setStartAtZero(true)
-        leftAxis.setAxisMaximum(4000f);
+        leftAxis.setAxisMaximum(400f);
         ValueFormatter xAxisFormatter = new DayAxisValueFormatter(chart);
         XAxis xAxis = chart.getXAxis();
         xAxis.setPosition(XAxisPosition.BOTTOM);
@@ -103,14 +103,24 @@ public class CombinedChartActivityGD extends DemoBase {
 
     private LineData generateLineData() {
 
-        LineData d = new LineData();
 
+//        LineData e = new LineData();
+//        LineData f = new LineData();
         ArrayList<Entry> entries = new ArrayList<>();
+        ArrayList<Entry> entries2 = new ArrayList<>();
+        ArrayList<Entry> entries3 = new ArrayList<>();
+        ArrayList<Entry> entries4 = new ArrayList<>();
+//        ArrayList<Entry> entries5 = new ArrayList<>();
 
-        for (int index = startDate; index < startDate+count; index++)
-            entries.add(new Entry(index + 0.5f, getRandom(200, 2300)));
+        for (int index = startDate; index < startDate+count; index++) {
+            entries.add(new Entry(index + 0.5f, getRandom(250, 50)));
+            entries2.add(new Entry(index + 0.5f, getRandom(250, 50)));
+            entries3.add(new Entry(index + 0.5f, getRandom(250, 50)));
+            entries4.add(new Entry(index + 0.5f, 70));
+//            entries3.add(new Entry(index + 0.5f, getRandom(250, 50)));
+        }
 
-        LineDataSet set = new LineDataSet(entries, "Kalori Ideal");
+        LineDataSet set = new LineDataSet(entries, "Gula darah pagi");
         set.setColor(Color.rgb(0, 240, 0));
         set.setLineWidth(2.5f);
         set.setCircleColor(Color.rgb(0, 0, 0));
@@ -120,9 +130,48 @@ public class CombinedChartActivityGD extends DemoBase {
         set.setDrawValues(false);
         set.setValueTextSize(3f);
         set.setValueTextColor(Color.rgb(0, 0, 0));
-
         set.setAxisDependency(YAxis.AxisDependency.LEFT);
-        d.addDataSet(set);
+
+        LineDataSet set1 = new LineDataSet(entries2, "Gula darah siang");
+        set1.setColor(Color.rgb(0, 0, 240));
+        set1.setLineWidth(2.5f);
+        set1.setCircleColor(Color.rgb(0, 0, 0));
+        set1.setCircleRadius(3f);
+        set1.setFillColor(Color.rgb(240, 0, 0));
+        set1.setMode(LineDataSet.Mode.CUBIC_BEZIER);
+        set1.setDrawValues(false);
+        set1.setValueTextSize(3f);
+        set1.setValueTextColor(Color.rgb(0, 0, 0));
+        set1.setAxisDependency(YAxis.AxisDependency.LEFT);
+
+        LineDataSet set2 = new LineDataSet(entries3, "Gula darah malam");
+        set2.setColor(Color.rgb(240, 240, 0));
+        set2.setLineWidth(2.5f);
+        set2.setCircleColor(Color.rgb(0, 0, 0));
+        set2.setCircleRadius(3f);
+        set2.setFillColor(Color.rgb(240, 0, 0));
+        set2.setMode(LineDataSet.Mode.CUBIC_BEZIER);
+        set2.setDrawValues(false);
+        set2.setValueTextSize(3f);
+        set2.setValueTextColor(Color.rgb(0, 0, 0));
+        set2.setAxisDependency(YAxis.AxisDependency.LEFT);
+
+        LineDataSet set3 = new LineDataSet(entries4, "Batas bawah");
+        set3.setColor(Color.rgb(240, 0, 0));
+        set3.setLineWidth(2.5f);
+
+        set3.setCircleColor(Color.rgb(240, 0, 0));
+        set3.setCircleRadius(0.5f);
+        set3.setFillColor(Color.rgb(240, 0, 0));
+        set3.setMode(LineDataSet.Mode.CUBIC_BEZIER);
+        set3.setDrawValues(false);
+        set3.setValueTextSize(3f);
+        set3.setValueTextColor(Color.rgb(0, 0, 0));
+        set3.setAxisDependency(YAxis.AxisDependency.LEFT);
+
+
+        LineData d = new LineData(set,set1,set2,set3);
+//        d.addDataSet();
 
         return d;
     }

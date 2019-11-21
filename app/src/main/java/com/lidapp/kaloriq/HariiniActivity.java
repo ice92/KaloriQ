@@ -110,7 +110,7 @@ public class HariiniActivity extends AppCompatActivity implements NavigationView
             txtcal=(TextView) headerView.findViewById(R.id.txtcal);
             try {
                 txtFullName.setText("Selamat Datang " + Common.currentUser.getName());
-                txtcal.setText("Rekomendasi kalori harian anda :"+pref.getFloat("cal",2500)+" KCal");
+                txtcal.setText("Rekomendasi kalori harian anda :"+pref.getFloat("cal",2350)+" KCal");
             }
             catch (NullPointerException e){
             }

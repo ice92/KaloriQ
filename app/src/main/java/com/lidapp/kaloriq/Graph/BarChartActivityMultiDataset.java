@@ -536,7 +536,7 @@ public class BarChartActivityMultiDataset extends DemoBase implements OnSeekBarC
         float randomMultiplier = seekBarY.getProgress() ;
 
         for (int i = 0; i < akti.size(); i++) {
-            values3.add(new BarEntry(i,  2500));
+//            values3.add(new BarEntry(i,  2350));
         }
 //        int sizemax;
 //        if(akti.size()>kalo.size()){
@@ -592,7 +592,7 @@ public class BarChartActivityMultiDataset extends DemoBase implements OnSeekBarC
             set1.setColor(Color.rgb(200, 0, 0));
             set2 = new BarDataSet(values2, "Konsumsi");
             set2.setColor(Color.rgb(0, 200, 0));
-            set3 = new BarDataSet(values2, "Ideal");
+            set3 = new BarDataSet(values2, "Haloo");
             set3.setColor(Color.rgb(0, 0, 200));
             BarData data = new BarData(set1, set2,set3);
             data.setValueFormatter(new LargeValueFormatter());
