@@ -119,7 +119,7 @@ public class CombinedChartActivity extends DemoBase {
         for (int index = startDate; index < startDate+count; index++)
             entries.add(new Entry(index + 0.5f, 2350));
 
-        LineDataSet set = new LineDataSet(entries, "Kalori Ideal");
+        LineDataSet set = new LineDataSet(entries, "Kalori Basal");
         set.setColor(Color.rgb(0, 240, 0));
         set.setLineWidth(2.5f);
         set.setCircleColor(Color.rgb(0, 0, 0));
