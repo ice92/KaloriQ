@@ -100,7 +100,7 @@ boolean puasa;
                             Intent detailIntent=new Intent(HomeTime.this,HomeDetail.class);
                             detailIntent.putExtra("waktu",clickItem.getName());
                             startActivity(detailIntent);
-
+                            finish();
                     }
                 });
             }

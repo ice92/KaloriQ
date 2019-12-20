@@ -93,7 +93,7 @@ public class ProfilAct extends AppCompatActivity implements NavigationView.OnNav
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 User2 user=dataSnapshot.getValue(User2.class);
-                String tgl=user.TL.substring(0,2)+"-"+user.TL.substring(2,4)+"-"+user.TL.substring(4,8);
+                String tgl=user.TL;
                 edtPhone.setText(user.Phone);
                 edtTb.setText(user.Tinggi);
                 edtBb.setText(user.Berat);
@@ -136,6 +136,26 @@ public class ProfilAct extends AppCompatActivity implements NavigationView.OnNav
                         double imt=(double) berat/(double)tingg2;
                         hopperUpdates.put("DB",rg.getCheckedRadioButtonId());
                         hopperUpdates.put("SEX",sex.getCheckedRadioButtonId());
+                        double cal;
+                        if((int) sex.getCheckedRadioButtonId()==2131230918) {
+                            if(tinggi<160){
+                                cal = (tinggi - 100)*30;
+                            }
+                            else {
+
+                                cal = (tinggi - 100)*0.9*30;
+                            }
+                        }
+                        else{
+                            if(tinggi<150){
+                                cal = (tinggi - 100)*25;
+                            }
+                            else {
+
+                                cal = (tinggi - 100)*0.9*25;
+                            }
+                        }
+                        editor.putFloat("cal",(float) cal);
                         editor.putFloat("bb",(float)berat);
                         editor.commit();
                         Log.e("IMT",""+Math.pow(tinggi,2)+","+imt);

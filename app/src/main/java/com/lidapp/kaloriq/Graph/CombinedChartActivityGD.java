@@ -103,26 +103,21 @@ public class CombinedChartActivityGD extends DemoBase {
 
     private LineData generateLineData() {
 
-
-//        LineData e = new LineData();
-//        LineData f = new LineData();
         ArrayList<Entry> entries = new ArrayList<>();
         ArrayList<Entry> entries2 = new ArrayList<>();
         ArrayList<Entry> entries3 = new ArrayList<>();
         ArrayList<Entry> entries4 = new ArrayList<>();
-//        ArrayList<Entry> entries5 = new ArrayList<>();
 
         for (int index = startDate; index < startDate+count; index++) {
             entries.add(new Entry(index + 0.5f, getRandom(250, 50)));
             entries2.add(new Entry(index + 0.5f, getRandom(250, 50)));
             entries3.add(new Entry(index + 0.5f, getRandom(250, 50)));
             entries4.add(new Entry(index + 0.5f, 70));
-//            entries3.add(new Entry(index + 0.5f, getRandom(250, 50)));
         }
 
         LineDataSet set = new LineDataSet(entries, "Gula darah pagi");
         set.setColor(Color.rgb(0, 240, 0));
-        set.setLineWidth(2.5f);
+        set.setLineWidth(0f);
         set.setCircleColor(Color.rgb(0, 0, 0));
         set.setCircleRadius(3f);
         set.setFillColor(Color.rgb(240, 0, 0));
@@ -134,7 +129,7 @@ public class CombinedChartActivityGD extends DemoBase {
 
         LineDataSet set1 = new LineDataSet(entries2, "Gula darah siang");
         set1.setColor(Color.rgb(0, 0, 240));
-        set1.setLineWidth(2.5f);
+        set1.setLineWidth(0f);
         set1.setCircleColor(Color.rgb(0, 0, 0));
         set1.setCircleRadius(3f);
         set1.setFillColor(Color.rgb(240, 0, 0));
@@ -146,7 +141,7 @@ public class CombinedChartActivityGD extends DemoBase {
 
         LineDataSet set2 = new LineDataSet(entries3, "Gula darah malam");
         set2.setColor(Color.rgb(240, 240, 0));
-        set2.setLineWidth(2.5f);
+        set2.setLineWidth(0f);
         set2.setCircleColor(Color.rgb(0, 0, 0));
         set2.setCircleRadius(3f);
         set2.setFillColor(Color.rgb(240, 0, 0));
@@ -158,7 +153,7 @@ public class CombinedChartActivityGD extends DemoBase {
 
         LineDataSet set3 = new LineDataSet(entries4, "Batas bawah");
         set3.setColor(Color.rgb(240, 0, 0));
-        set3.setLineWidth(2.5f);
+        set3.setLineWidth(0f);
 
         set3.setCircleColor(Color.rgb(240, 0, 0));
         set3.setCircleRadius(0.5f);

@@ -57,6 +57,7 @@ public class HomeDetail extends AppCompatActivity implements SearchView.OnQueryT
             public void onClick(View view) {
                 Intent DetailIntent=new Intent(HomeDetail.this,HariiniActivity.class);
                 startActivity(DetailIntent);
+                finish();
             }
         });
         contactList = new ArrayList<>();

@@ -33,6 +33,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.lidapp.kaloriq.Common.Common;
 import com.lidapp.kaloriq.Graph.BarChartActivityMultiDataset;
+import com.lidapp.kaloriq.Graph.CombinedChartActivity;
+import com.lidapp.kaloriq.Graph.CombinedChartActivityGD;
 import com.lidapp.kaloriq.GulaDarah.GulaDarahAct;
 import com.lidapp.kaloriq.Interface.ItemClickListener;
 import com.lidapp.kaloriq.Model.Aktifitas;
@@ -316,11 +318,11 @@ public class HariiniActivity extends AppCompatActivity implements NavigationView
 
             return super.onOptionsItemSelected(item);
         }
-
+    SharedPreferences pref;
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
+        pref = getApplicationContext().getSharedPreferences("MyPref", 0);
         SharedPreferences.Editor editor = pref.edit();
 
         // Handle navigation view item clicks here.
@@ -330,26 +332,37 @@ public class HariiniActivity extends AppCompatActivity implements NavigationView
             Intent homeIntent=new Intent(HariiniActivity.this,Home.class);
             startActivity(homeIntent);
         } else if (id == R.id.nav_cart) {
-//            Intent DetailIntent=new Intent(HariiniActivity.this,HariiniActivity.class);
+//            Intent DetailIntent=new Intent(Home.this,HariiniActivity.class);
 //            startActivity(DetailIntent);
+//            this.finish();
         }  else if (id == R.id.nav_profil) {
             Intent DetailIntent=new Intent(HariiniActivity.this,ProfilAct.class);
             startActivity(DetailIntent);
+//            this.finish();
         }else if (id == R.id.nav_act) {
             Intent DetailIntent=new Intent(HariiniActivity.this,HariIniAct.class);
             startActivity(DetailIntent);
+//            this.finish();
         }else if (id == R.id.nav_gd) {
             Intent DetailIntent=new Intent(HariiniActivity.this,HariIniGD.class);
             startActivity(DetailIntent);
+//            this.finish();
         }else if (id == R.id.nav_orders) {
-            Intent DetailIntent=new Intent(HariiniActivity.this, BarChartActivityMultiDataset.class);
-            startActivity(DetailIntent);}
+            Intent DetailIntent=new Intent(HariiniActivity.this, CombinedChartActivity.class);
+            startActivity(DetailIntent);
+//            this.finish();
+        }else if (id == R.id.nav_orders2) {
+            Intent DetailIntent=new Intent(HariiniActivity.this, CombinedChartActivityGD.class);
+            startActivity(DetailIntent);
+//            this.finish();
+        }
         else if (id == R.id.nav_ramadhan) {
             if(pref.getBoolean("isfast",true)) {
                 editor.putBoolean("isfast", false);
                 editor.commit();
                 item.setTitle("Mode Puasa (Non Aktif)");
                 Toast.makeText(HariiniActivity.this,"Mode Puasa dinonaktifkan",Toast.LENGTH_LONG).show();
+
             }
             else{
                 editor.putBoolean("isfast", true);
@@ -357,6 +370,7 @@ public class HariiniActivity extends AppCompatActivity implements NavigationView
                 item.setTitle("Mode Puasa (Aktif)");
 //                item.setIcon(R.drawable.ic_action_save);
                 Toast.makeText(HariiniActivity.this,"Mode Puasa diaktifkan",Toast.LENGTH_LONG).show();
+//                this.finish();
             }
         } else if (id == R.id.nav_logout) {
 

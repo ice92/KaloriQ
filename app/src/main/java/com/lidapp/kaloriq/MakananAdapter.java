@@ -57,6 +57,7 @@ public class MakananAdapter extends RecyclerView.Adapter<MakananAdapter.ViewHold
                 intent.putExtra("waktu",HomeDetail.EXTRA_TIME);
                 intent.putExtra(DetailsActivity.EXTRA_CONTACT, contact);
                 context.startActivity(intent);
+
             }
         });
 

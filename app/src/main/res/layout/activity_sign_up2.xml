@@ -135,6 +135,7 @@
             android:text="TEST" />
 
             <Button
+                android:id="@+id/imtbt"
                 android:layout_width="51dp"
                 android:layout_height="match_parent"
                 android:text="?"

@@ -96,6 +96,7 @@ public class BarChartActivityMultiDataset extends DemoBase implements OnSeekBarC
         setTitle("BarChartActivityMultiDataset");
         SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
         bb=pref.getFloat("bb",0);
+        Log.e("berat badan",""+bb);
         if (pref.getBoolean("isfast", true)) {
             waktu = waktu2;
         } else {
@@ -106,6 +107,10 @@ public class BarChartActivityMultiDataset extends DemoBase implements OnSeekBarC
     }
 
     private void showGraph(){
+        for(Bar item:akti) {
+            Log.e("BARUUU", "The " + item.getTgl() + ":" + item.getBulan()+ ":" + item.getTahun()+ ":" + item.getNilai()+":"+item.getall());
+        }
+        Log.e("BARUUU",""+akti.size());
         tvX = findViewById(R.id.tvXMax);
         tvX.setTextSize(10);
         tvY = findViewById(R.id.tvYMax);
@@ -178,6 +183,7 @@ public class BarChartActivityMultiDataset extends DemoBase implements OnSeekBarC
 
         chart.getAxisRight().setEnabled(false);
         chart.animateY(1500);
+
     }
 
     ArrayList<Bar> akti;
