@@ -11,6 +11,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.WindowManager;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.github.mikephil.charting.charts.CombinedChart;
@@ -83,6 +85,24 @@ public class CombinedChartActivity extends DemoBase {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_combined);
+        //spinner tahun
+        ArrayList<String> years = new ArrayList<String>();
+        int thisYear = Calendar.getInstance().get(Calendar.YEAR);
+        for (int i = 2018; i <= thisYear; i++) {
+            years.add(Integer.toString(i));
+        }
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, years);
+        Spinner spinYear = (Spinner)findViewById(R.id.year_spinner);
+        spinYear.setAdapter(adapter);
+        //spinner bulan
+        Spinner spinner = (Spinner) findViewById(R.id.months_spinner);
+// Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this,
+                R.array.months_array, android.R.layout.simple_spinner_item);
+// Specify the layout to use when the list of choices appears
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+// Apply the adapter to the spinner
+        spinner.setAdapter(adapter2);
         setTitle("CombinedChartActivity");
         SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
         bb=pref.getFloat("bb",0);

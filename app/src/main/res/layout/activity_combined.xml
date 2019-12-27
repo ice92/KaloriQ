@@ -6,6 +6,38 @@
     <com.github.mikephil.charting.charts.CombinedChart
         android:id="@+id/chart1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="wrap_content"
+        android:layout_above="@id/months_spinner"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="30dp"
+        android:layout_alignParentTop="true"/>
+
+    <Spinner
+        android:id="@+id/months_spinner"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"/>
+    <Spinner
+        android:id="@+id/year_spinner"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+
+        android:layout_marginBottom="10dp"
+        android:layout_toEndOf="@id/months_spinner"
+        />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@id/year_spinner"
+        android:layout_alignParentEnd="true"
+        android:text="LIHAT GRAFIK" />
 
 </RelativeLayout>

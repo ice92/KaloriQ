@@ -83,6 +83,7 @@ public class CombinedChartActivityGD extends DemoBase {
         xAxis.setPosition(XAxisPosition.BOTTOM);
         xAxis.setAxisMinimum(startDate);
         xAxis.setGranularity(1f);
+        xAxis.setCenterAxisLabels(true);
         xAxis.setValueFormatter(xAxisFormatter);
         CombinedData data = new CombinedData();
 
