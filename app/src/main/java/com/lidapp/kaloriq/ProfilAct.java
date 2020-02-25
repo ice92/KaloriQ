@@ -97,6 +97,7 @@ public class ProfilAct extends AppCompatActivity implements NavigationView.OnNav
                 edtPhone.setText(user.Phone);
                 edtTb.setText(user.Tinggi);
                 edtBb.setText(user.Berat);
+                tgl=tgl.substring(0,2)+"-"+tgl.substring(2,4)+"-"+tgl.substring(4);
                 edtTl.setText(tgl);
                 rg.check(user.DB);
                 sex.check(user.SEX);
@@ -137,22 +138,22 @@ public class ProfilAct extends AppCompatActivity implements NavigationView.OnNav
                         hopperUpdates.put("DB",rg.getCheckedRadioButtonId());
                         hopperUpdates.put("SEX",sex.getCheckedRadioButtonId());
                         double cal;
-                        if((int) sex.getCheckedRadioButtonId()==2131230918) {
+                        if(sex.getCheckedRadioButtonId()==2131296456) {
                             if(tinggi<160){
-                                cal = (tinggi - 100)*30;
+                                cal = (tinggi - 100)*(double)30;
                             }
                             else {
 
-                                cal = (tinggi - 100)*0.9*30;
+                                cal = (tinggi - 100)*0.9*(double)30;
                             }
                         }
                         else{
                             if(tinggi<150){
-                                cal = (tinggi - 100)*25;
+                                cal = (tinggi - 100)*(double)25;
                             }
                             else {
 
-                                cal = (tinggi - 100)*0.9*25;
+                                cal = (tinggi - 100)*0.9*(double)25;
                             }
                         }
                         editor.putFloat("cal",(float) cal);

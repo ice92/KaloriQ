@@ -149,7 +149,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         txtcal=(TextView) headerView.findViewById(R.id.txtcal);
         try {
             txtFullName.setText("Selamat Datang " + Common.currentUser.getName());
-            txtcal.setText("Rekomendasi kalori harian anda :"+pref.getFloat("cal",2350)+" KCal");
+            txtcal.setText("Rekomendasi kalori harian anda :"+pref.getFloat("cal",0)+" KCal");
         }
         catch (NullPointerException e){
         }

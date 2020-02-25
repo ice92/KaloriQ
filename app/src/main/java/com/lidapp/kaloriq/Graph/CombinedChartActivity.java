@@ -49,13 +49,16 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class CombinedChartActivity extends DemoBase {
 
@@ -88,7 +91,7 @@ public class CombinedChartActivity extends DemoBase {
         //spinner tahun
         ArrayList<String> years = new ArrayList<String>();
         int thisYear = Calendar.getInstance().get(Calendar.YEAR);
-        for (int i = 2018; i <= thisYear; i++) {
+        for (int i = thisYear-1; i <= thisYear; i++) {
             years.add(Integer.toString(i));
         }
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, years);
@@ -141,14 +144,30 @@ public class CombinedChartActivity extends DemoBase {
 
         return d;
     }
+    private float dateToDays(Date endDateValue, Date startDateValue){
 
-    private BarData generateBarData() {
+        long diff = endDateValue.getTime() - startDateValue.getTime();
+        float days= TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
+        return 0;
+    }
+    private BarData generateBarData() throws ParseException {
+        String dateStr = "2/3/2017";
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        Date date = sdf.parse(dateStr);
+
 
         ArrayList<BarEntry> entries1 = new ArrayList<>();
         ArrayList<BarEntry> entries2 = new ArrayList<>();
         int ba=0;
+        Log.e("besar",""+kalo.size());
         for (int i=0;i<31&&ba<kalo.size();i++) {
             if(i+1==kalo.get(ba).getTgl()){
+                int h=kalo.get(ba).getTgl();
+                int t=kalo.get(ba).getTahun();
+//                int thisYear = Calendar.getInstance().get(Calendar.YEAR);
+//                int tahun=thisYear-2020;
+                int bulan=kalo.get(ba).getBulan();
+//                int to=getDaysForMonth(bulan-1,t);
                 entries1.add(new BarEntry(kalo.get(ba).getTgl(), kalo.get(ba).getNilai()));
                 ba++;
             }
@@ -157,8 +176,14 @@ public class CombinedChartActivity extends DemoBase {
             }
         }
         ba=0;
+
         for(int i=0;i<31&&ba<akti.size();i++){
             if(i+1==akti.get(ba).getTgl()){
+//                int t=akti.get(ba).getTahun();
+//                int thisYear = Calendar.getInstance().get(Calendar.YEAR);
+//                int tahun=thisYear-2019;
+//                int bulan=akti.get(ba).getBulan();
+//                int to=getDaysForMonth(bulan-1,t);
                 entries2.add(new BarEntry(akti.get(ba).getTgl(), akti.get(ba).getNilai()));
                 ba++;
             }
@@ -192,7 +217,26 @@ public class CombinedChartActivity extends DemoBase {
 
         return d;
     }
+    public int getDaysForMonth(int month, int year) {
 
+        // month is 0-based
+
+        if (month == 1) {
+            boolean is29Feb = false;
+
+            if (year < 1582)
+                is29Feb = (year < 1 ? year + 1 : year) % 4 == 0;
+            else if (year > 1582)
+                is29Feb = year % 4 == 0 && (year % 100 != 0 || year % 400 == 0);
+
+            return is29Feb ? 29 : 28;
+        }
+
+        if (month == 3 || month == 5 || month == 8 || month == 10)
+            return 30;
+        else
+            return 31;
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.combined, menu);
@@ -550,7 +594,11 @@ public class CombinedChartActivity extends DemoBase {
 //                    }
                 kalo=kalofil;
 //
-                showGraph();
+                try {
+                    showGraph();
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
@@ -560,7 +608,7 @@ public class CombinedChartActivity extends DemoBase {
 
     }
 
-    private void showGraph() {
+    private void showGraph() throws ParseException {
 //        for(Bar item:akti) {
 //            Log.e("BARUUU", "The " + item.getTgl() + ":" + item.getBulan()+ ":" + item.getTahun()+ ":" + item.getNilai()+":"+item.getall());
 //        }
